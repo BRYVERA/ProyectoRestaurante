@@ -44,7 +44,6 @@ namespace AJA
 
         }
 
-
             //BOTON REGISTRO DE LOS CLIENTES POR SP
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -177,6 +176,19 @@ namespace AJA
 
                 MessageBox.Show("Lo siento,algo fallo");
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Reservas Reservas = new Reservas();
+            Reservas.Show();
+            Clientes Clientes = new Clientes();
+            Clientes.Close();
         }
     }
 }

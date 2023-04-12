@@ -67,6 +67,11 @@
             this.dWDWDWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dWDWDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dWDWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -84,6 +89,8 @@
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -99,7 +106,7 @@
             this.btnRegistrarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarClientes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnRegistrarClientes.Location = new System.Drawing.Point(802, 433);
+            this.btnRegistrarClientes.Location = new System.Drawing.Point(802, 517);
             this.btnRegistrarClientes.Name = "btnRegistrarClientes";
             this.btnRegistrarClientes.Size = new System.Drawing.Size(124, 41);
             this.btnRegistrarClientes.TabIndex = 0;
@@ -111,7 +118,7 @@
             // 
             this.dgvClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(33, 117);
+            this.dgvClientes.Location = new System.Drawing.Point(38, 189);
             this.dgvClientes.Name = "dgvClientes";
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
             this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -125,7 +132,7 @@
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
-            this.txtID.Location = new System.Drawing.Point(877, 144);
+            this.txtID.Location = new System.Drawing.Point(877, 228);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(134, 19);
             this.txtID.TabIndex = 2;
@@ -190,7 +197,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(33, 77);
+            this.label2.Location = new System.Drawing.Point(33, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 25);
             this.label2.TabIndex = 9;
@@ -203,7 +210,7 @@
             this.btnEliminarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarClientes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnEliminarClientes.Location = new System.Drawing.Point(934, 433);
+            this.btnEliminarClientes.Location = new System.Drawing.Point(934, 517);
             this.btnEliminarClientes.Name = "btnEliminarClientes";
             this.btnEliminarClientes.Size = new System.Drawing.Size(124, 41);
             this.btnEliminarClientes.TabIndex = 10;
@@ -214,7 +221,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(824, 169);
+            this.panel1.Location = new System.Drawing.Point(824, 253);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 1);
             this.panel1.TabIndex = 11;
@@ -283,7 +290,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(801, 110);
+            this.groupBox1.Location = new System.Drawing.Point(801, 194);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(266, 81);
             this.groupBox1.TabIndex = 21;
@@ -311,7 +318,7 @@
             this.groupBox3.Controls.Add(this.panel2);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(1096, 110);
+            this.groupBox3.Location = new System.Drawing.Point(1096, 194);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(266, 81);
             this.groupBox3.TabIndex = 23;
@@ -339,7 +346,7 @@
             this.groupBox5.Controls.Add(this.panel3);
             this.groupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(801, 213);
+            this.groupBox5.Location = new System.Drawing.Point(801, 297);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(266, 81);
             this.groupBox5.TabIndex = 23;
@@ -367,7 +374,7 @@
             this.groupBox7.Controls.Add(this.panel4);
             this.groupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(1096, 213);
+            this.groupBox7.Location = new System.Drawing.Point(1096, 297);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(266, 81);
             this.groupBox7.TabIndex = 24;
@@ -394,7 +401,7 @@
             this.groupBox9.Controls.Add(this.panel5);
             this.groupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.Color.White;
-            this.groupBox9.Location = new System.Drawing.Point(802, 316);
+            this.groupBox9.Location = new System.Drawing.Point(802, 400);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(266, 81);
             this.groupBox9.TabIndex = 25;
@@ -409,7 +416,7 @@
             this.groupBox10.Controls.Add(this.panel7);
             this.groupBox10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.ForeColor = System.Drawing.Color.White;
-            this.groupBox10.Location = new System.Drawing.Point(1096, 316);
+            this.groupBox10.Location = new System.Drawing.Point(1096, 400);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(266, 81);
             this.groupBox10.TabIndex = 26;
@@ -422,7 +429,7 @@
             this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnActualizarCliente.Location = new System.Drawing.Point(1064, 433);
+            this.btnActualizarCliente.Location = new System.Drawing.Point(1064, 517);
             this.btnActualizarCliente.Name = "btnActualizarCliente";
             this.btnActualizarCliente.Size = new System.Drawing.Size(124, 41);
             this.btnActualizarCliente.TabIndex = 27;
@@ -478,6 +485,64 @@
             this.dWDWToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.dWDWToolStripMenuItem.Text = "DWDW";
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.pictureBox8);
+            this.panel9.Controls.Add(this.label4);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Controls.Add(this.label1);
+            this.panel9.Location = new System.Drawing.Point(4, 2);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1431, 64);
+            this.panel9.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.label1.Location = new System.Drawing.Point(507, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 24);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "CLIENTES";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.label3.Location = new System.Drawing.Point(647, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 24);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "RESERVAS";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.label4.Location = new System.Drawing.Point(804, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 24);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "MESAS";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(18, 6);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 29;
+            this.pictureBox8.TabStop = false;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::AJA.Properties.Resources.llamada_telefonica;
@@ -526,7 +591,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1044, 32);
+            this.pictureBox3.Location = new System.Drawing.Point(1044, 116);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 50);
             this.pictureBox3.TabIndex = 15;
@@ -537,7 +602,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(827, 136);
+            this.pictureBox2.Location = new System.Drawing.Point(827, 220);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 31);
             this.pictureBox2.TabIndex = 13;
@@ -549,6 +614,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1436, 583);
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.btnActualizarCliente);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
@@ -585,6 +651,9 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -642,6 +711,11 @@
         private System.Windows.Forms.ToolStripMenuItem dWDWDWToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dWDWDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dWDWToolStripMenuItem;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 
