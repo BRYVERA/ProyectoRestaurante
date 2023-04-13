@@ -200,9 +200,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(33, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(245, 25);
+            this.label2.Size = new System.Drawing.Size(128, 25);
             this.label2.TabIndex = 9;
-            this.label2.Text = "REGISTRO CLIENTES";
+            this.label2.Text = "REGISTRO";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnEliminarClientes
