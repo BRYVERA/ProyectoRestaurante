@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionReservas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -390,8 +390,8 @@
             this.dgvAdminReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdminReserva.Location = new System.Drawing.Point(29, 186);
             this.dgvAdminReserva.Name = "dgvAdminReserva";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAdminReserva.Size = new System.Drawing.Size(641, 207);
             this.dgvAdminReserva.TabIndex = 30;
             // 
@@ -533,7 +533,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1420, 544);
+            this.ClientSize = new System.Drawing.Size(1387, 544);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnReservar);
