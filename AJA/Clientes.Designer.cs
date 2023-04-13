@@ -118,7 +118,7 @@
             // 
             this.dgvClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(38, 189);
+            this.dgvClientes.Location = new System.Drawing.Point(38, 205);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
@@ -615,7 +615,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1436, 583);
+            this.ClientSize = new System.Drawing.Size(1386, 583);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.btnActualizarCliente);
             this.Controls.Add(this.groupBox10);
