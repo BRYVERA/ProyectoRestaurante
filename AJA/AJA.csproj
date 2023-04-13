@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionReservas.Designer.cs">
+      <DependentUpon>AdministracionReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBoracle.cs" />
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
@@ -63,6 +69,9 @@
     <Compile Include="Reservas.Designer.cs">
       <DependentUpon>Reservas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdministracionReservas.resx">
+      <DependentUpon>AdministracionReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
