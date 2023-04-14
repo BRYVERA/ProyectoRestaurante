@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionReservas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -96,6 +96,7 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1431, 64);
             this.panel9.TabIndex = 44;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // pictureBox8
             // 
@@ -390,8 +391,8 @@
             this.dgvAdminReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdminReserva.Location = new System.Drawing.Point(29, 186);
             this.dgvAdminReserva.Name = "dgvAdminReserva";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
-            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAdminReserva.Size = new System.Drawing.Size(641, 207);
             this.dgvAdminReserva.TabIndex = 30;
             // 
@@ -557,6 +558,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AdministracionReservas";
             this.Text = "AdministracionReservas";
+            this.Load += new System.EventHandler(this.AdministracionReservas_Load);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
