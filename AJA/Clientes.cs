@@ -21,7 +21,6 @@ namespace AJA
         {
             InitializeComponent();
 
-
         }
 
         int indexRow;
@@ -29,7 +28,6 @@ namespace AJA
         //CARGAR LOS DATOS DE LOS CLIENTES POR MEDIO DE UN CURSOR
         private void Form1_Load(object sender, EventArgs e)
         {
-
             conexion.Open();
             OracleCommand comando = new OracleCommand("mostrar_clientes", conexion);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -41,7 +39,6 @@ namespace AJA
             adaptador.Fill(tabla);
             dgvClientes.DataSource = tabla;
             conexion.Close();
-
         }
 
             //BOTON REGISTRO DE LOS CLIENTES POR SP

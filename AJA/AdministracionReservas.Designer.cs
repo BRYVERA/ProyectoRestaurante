@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionReservas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnActualizarCliente = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -54,11 +53,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEliminarClientes = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNumReserva = new System.Windows.Forms.TextBox();
             this.dgvAdminReserva = new System.Windows.Forms.DataGridView();
-            this.btnRegistrarClientes = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -69,6 +66,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnReservar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -142,25 +140,12 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "CLIENTES";
             // 
-            // btnActualizarCliente
-            // 
-            this.btnActualizarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnActualizarCliente.Location = new System.Drawing.Point(997, 545);
-            this.btnActualizarCliente.Name = "btnActualizarCliente";
-            this.btnActualizarCliente.Size = new System.Drawing.Size(124, 41);
-            this.btnActualizarCliente.TabIndex = 43;
-            this.btnActualizarCliente.Text = "Actualizar";
-            this.btnActualizarCliente.UseVisualStyleBackColor = false;
-            // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox7.Controls.Add(this.comboBox1);
             this.groupBox7.Controls.Add(this.pictureBox7);
             this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.txtMesa);
             this.groupBox7.Controls.Add(this.panel4);
             this.groupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.Color.White;
@@ -198,7 +183,7 @@
             this.txtMesa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMesa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMesa.ForeColor = System.Drawing.Color.White;
-            this.txtMesa.Location = new System.Drawing.Point(73, 37);
+            this.txtMesa.Location = new System.Drawing.Point(1230, 513);
             this.txtMesa.Name = "txtMesa";
             this.txtMesa.Size = new System.Drawing.Size(145, 19);
             this.txtMesa.TabIndex = 5;
@@ -350,19 +335,6 @@
             this.panel1.Size = new System.Drawing.Size(220, 1);
             this.panel1.TabIndex = 34;
             // 
-            // btnEliminarClientes
-            // 
-            this.btnEliminarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnEliminarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarClientes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnEliminarClientes.Location = new System.Drawing.Point(867, 545);
-            this.btnEliminarClientes.Name = "btnEliminarClientes";
-            this.btnEliminarClientes.Size = new System.Drawing.Size(124, 41);
-            this.btnEliminarClientes.TabIndex = 33;
-            this.btnEliminarClientes.Text = "Eliminar";
-            this.btnEliminarClientes.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -391,23 +363,10 @@
             this.dgvAdminReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdminReserva.Location = new System.Drawing.Point(29, 186);
             this.dgvAdminReserva.Name = "dgvAdminReserva";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
+            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAdminReserva.Size = new System.Drawing.Size(641, 207);
             this.dgvAdminReserva.TabIndex = 30;
-            // 
-            // btnRegistrarClientes
-            // 
-            this.btnRegistrarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnRegistrarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarClientes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnRegistrarClientes.Location = new System.Drawing.Point(735, 545);
-            this.btnRegistrarClientes.Name = "btnRegistrarClientes";
-            this.btnRegistrarClientes.Size = new System.Drawing.Size(124, 41);
-            this.btnRegistrarClientes.TabIndex = 29;
-            this.btnRegistrarClientes.Text = "Registrar";
-            this.btnRegistrarClientes.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -501,6 +460,7 @@
             this.btnActualizar.TabIndex = 51;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -514,6 +474,7 @@
             this.btnEliminar.TabIndex = 50;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnReservar
             // 
@@ -527,6 +488,19 @@
             this.btnReservar.TabIndex = 49;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = false;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(78, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(156, 25);
+            this.comboBox1.TabIndex = 52;
+            this.comboBox1.Text = "      Seleccionar";
             // 
             // AdministracionReservas
             // 
@@ -536,6 +510,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1387, 544);
             this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.txtMesa);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.pictureBox4);
@@ -543,27 +518,24 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.panel9);
-            this.Controls.Add(this.btnActualizarCliente);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnEliminarClientes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNumReserva);
             this.Controls.Add(this.dgvAdminReserva);
-            this.Controls.Add(this.btnRegistrarClientes);
             this.Controls.Add(this.groupBox1);
             this.Name = "AdministracionReservas";
+            this.Tag = "";
             this.Text = "AdministracionReservas";
             this.Load += new System.EventHandler(this.AdministracionReservas_Load);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -589,7 +561,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnActualizarCliente;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -608,11 +579,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnEliminarClientes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNumReserva;
         private System.Windows.Forms.DataGridView dgvAdminReserva;
-        private System.Windows.Forms.Button btnRegistrarClientes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -623,5 +592,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnReservar;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
