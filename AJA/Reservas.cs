@@ -31,63 +31,6 @@ namespace AJA
         private void Reservas_Load(object sender, EventArgs e)
         {
 
-            //conexion.Open();
-            //OracleCommand command = new OracleCommand("mi_procedimiento", conexion);
-            //command.CommandType = System.Data.CommandType.StoredProcedure;
-
-            //// Crear parámetros de salida
-            //OracleParameter idParam = new OracleParameter("ids", OracleType.VarChar, 100);
-            //idParam.Direction = ParameterDirection.Output;
-            //command.Parameters.Add(idParam);
-
-            //OracleParameter nombreParam = new OracleParameter("nom", OracleType.VarChar, 300);
-            //nombreParam.Direction = ParameterDirection.Output;
-            //command.Parameters.Add(nombreParam);
-
-            //OracleParameter apellidoParam = new OracleParameter("prim", OracleType.VarChar, 20);
-            //apellidoParam.Direction = ParameterDirection.Output;
-            //command.Parameters.Add(apellidoParam);
-
-            //OracleParameter horaParam = new OracleParameter("horas", OracleType.VarChar, 20);
-            //horaParam.Direction = ParameterDirection.Output;
-            //command.Parameters.Add(horaParam);
-
-            //OracleParameter fechaParam = new OracleParameter("fechas", OracleType.VarChar, 20);
-            //fechaParam.Direction = ParameterDirection.Output;
-            //command.Parameters.Add(fechaParam);
-
-            //OracleParameter capacidadParam = new OracleParameter("cap", OracleType.Number);
-            //capacidadParam.Direction = ParameterDirection.Output;
-            //command.Parameters.Add(capacidadParam);
-
-            //OracleParameter tipoParam = new OracleParameter("tip", OracleType.VarChar, 50);
-            //tipoParam.Direction = ParameterDirection.Output;
-            //command.Parameters.Add(tipoParam);
-
-            //command.ExecuteNonQuery();
-
-            //DataTable dataTable = new DataTable();
-            //dataTable.Columns.Add("ID", typeof(string));
-            //dataTable.Columns.Add("Nombre", typeof(string));
-            //dataTable.Columns.Add("Apellido", typeof(string));
-            //dataTable.Columns.Add("Hora", typeof(string));
-            //dataTable.Columns.Add("Fecha", typeof(string));
-            //dataTable.Columns.Add("Capacidad", typeof(int));
-            //dataTable.Columns.Add("Tipo", typeof(string));
-
-            //DataRow row = dataTable.NewRow();
-            //row["ID"] = idParam.Value;
-            //row["Nombre"] = nombreParam.Value;
-            //row["Apellido"] = apellidoParam.Value;
-            //row["Hora"] = horaParam.Value;
-            //row["Fecha"] = fechaParam.Value;
-            //row["Capacidad"] = capacidadParam.Value;
-            //row["Tipo"] = tipoParam.Value;
-            //dataTable.Rows.Add(row);
-
-            //dgvReservas.DataSource = dataTable;
-
-            //conexion.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -98,6 +41,43 @@ namespace AJA
         private void btnAdministrarReservas_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            conexion.Open();
+            OracleCommand comando = new OracleCommand("mostrar_reserva_clientesss", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("reservas", OracleType.Cursor).Direction = ParameterDirection.Output;
+            comando.Parameters.Add("PID", OracleType.VarChar).Value = txtID.Text;
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgvReservas.DataSource = tabla;
+
+            conexion.Close();
+
+            txtID.Text = "";
+
+        }
+
+        private void btnTodos_Click(object sender, EventArgs e)
+        {
+            conexion.Open();
+            OracleCommand comando = new OracleCommand("mostrar_reserva_clientesss", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("reservas", OracleType.Cursor).Direction = ParameterDirection.Output;
+            comando.Parameters.Add("PID", OracleType.VarChar).Value = txtID.Text;
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgvReservas.DataSource = tabla;
+
+            conexion.Close();
         }
     }
 }
