@@ -559,6 +559,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Mesas";
             this.Text = "Mesas";
+            this.Load += new System.EventHandler(this.Mesas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.panel9.ResumeLayout(false);

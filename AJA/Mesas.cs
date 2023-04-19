@@ -21,5 +21,10 @@ namespace AJA
         {
 
         }
+
+        private void Mesas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

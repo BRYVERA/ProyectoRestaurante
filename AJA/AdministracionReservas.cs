@@ -35,9 +35,15 @@ namespace AJA
 
         }
 
+
         private void AdministracionReservas_Load(object sender, EventArgs e)
         {
-            // Cargo las mesas que se encuntran desocupadas
+        
+
+        
+            // Listo
+            // Cargo las mesas que se encuntran unicamente desocupadas en un combobox
+            // Listo
 
             conexion.Open();
             OracleCommand comando = new OracleCommand("listar_mesas_disponibles", conexion);
@@ -54,13 +60,18 @@ namespace AJA
 
             conexion.Close();
 
-            // Cargar Datagridview // 
+            // Falta
+            // Cargar Informacion sobre una reserva (combinacion de varias tablas view y lo ejecuta un sp) // 
+            // Falta
+
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Listo
             // Delete una reserva
+            // Listo
 
             conexion.Open();
 
@@ -82,7 +93,9 @@ namespace AJA
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            // FALTA
             // Update una reserva
+            // FALTA
 
             conexion.Open();
             OracleCommand command = new OracleCommand("editar_reserva", conexion);
@@ -92,8 +105,8 @@ namespace AJA
 
             command.Parameters.Add("p_reserva_id", OracleType.Int32).Value = txtNumReserva.Text;
             command.Parameters.Add("p_hora", OracleType.VarChar).Value = txtHora.Text;
-            command.Parameters.Add("p_fecha", OracleType.VarChar).Value = txtFecha.Text;  
-            command.Parameters.Add("p_mesa_id", OracleType.Int32).Value = txtMesa.Text;
+            command.Parameters.Add("P_FECHA", OracleType.VarChar).Value = dateTimePicker1.Value.ToString("dd-MMM-yyyy");
+            command.Parameters.Add("P_MESA_ID", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
             command.Parameters.Add("p_identificacion", OracleType.Number).Value = txtID.Text;
 
             command.Parameters.Add("RETURN_VALUE", OracleType.Int32).Direction = ParameterDirection.ReturnValue;
@@ -107,6 +120,57 @@ namespace AJA
         }
 
         private void btnReservar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DialogResult resul = MessageBox.Show("Seguro que quieres registrar", "Registro", MessageBoxButtons.YesNo);
+                if (resul == DialogResult.Yes)
+                {
+                    conexion.Open();
+                    OracleCommand comando = new OracleCommand("agregar_reserva", conexion);
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.Parameters.Add("P_FECHA", OracleType.VarChar).Value = dateTimePicker1.Value.ToString("dd-MMM-yyyy");
+                    comando.Parameters.Add("P_MESA_ID", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
+                    comando.Parameters.Add("P_IDENTIFICACION", OracleType.VarChar).Value = txtID.Text;
+                    comando.Parameters.Add("P_HORA", OracleType.VarChar).Value = txtHora.Text;
+                   
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+
+                    //txtID.Text = "";
+                    //txtNombre.Text = "";
+                    //txtPrimerApellido.Text = "";
+                    //txtSegundoApellido.Text = "";
+                    //txtEmail.Text = "";
+                    //txtTelefono.Text = "";
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Lo siento,algo fallo");
+            }
+
+        }
+
+        private void dgvAdminReserva_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
