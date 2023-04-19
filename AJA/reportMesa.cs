@@ -39,26 +39,26 @@ namespace AJA
         private void btnRegistrarReportesMesa_Click(object sender, EventArgs e)
         {
 
-           try
-           {
+            try
+            {
                 conexion.Open();
-            OracleCommand comando = new OracleCommand("create_reporte_mesa", conexion);
-            comando.Connection = conexion;
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("p_reporte_id", OracleType.Number).Value = Convert.ToInt32(txtReporteID.Text);
-            comando.Parameters.Add("p_fecha", OracleType.VarChar).Value = txtFecha.Text;
-            comando.Parameters.Add("p_identificacion_cliente", OracleType.Number).Value = Convert.ToInt32(txtIDCliente.Text);
-            comando.Parameters.Add("p_reserva_id", OracleType.Number).Value = Convert.ToInt32(txtReservaID.Text);
-            comando.Parameters.Add("p_hora", OracleType.VarChar).Value = txtHora.Text;
-            comando.ExecuteNonQuery();
-            conexion.Close();
-            MessageBox.Show("Registro exitoso");
+                OracleCommand comando = new OracleCommand("create_reporte_mesa", conexion);
+                comando.Connection = conexion;
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("p_reporte_id", OracleType.Number).Value = Convert.ToInt32(txtReporteID.Text);
+                comando.Parameters.Add("p_fecha", OracleType.VarChar).Value = txtFecha.Text;
+                comando.Parameters.Add("p_identificacion_cliente", OracleType.Number).Value = Convert.ToInt32(txtIDCliente.Text);
+                comando.Parameters.Add("p_reserva_id", OracleType.Number).Value = Convert.ToInt32(txtReservaID.Text);
+                comando.Parameters.Add("p_hora", OracleType.VarChar).Value = txtHora.Text;
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Registro exitoso");
 
-            txtFecha.Text = "";
-            txtIDCliente.Text = "";
-            txtReporteID.Text = "";
-            txtHora.Text = "";
-            txtReservaID.Text = "";
+                txtFecha.Text = "";
+                txtIDCliente.Text = "";
+                txtReporteID.Text = "";
+                txtHora.Text = "";
+                txtReservaID.Text = "";
 
             }
             catch (Exception)
@@ -77,16 +77,16 @@ namespace AJA
             {
                 conexion.Open();
 
-            OracleCommand comando = new OracleCommand("read_reporte_mesa", conexion);
-                            comando.Connection = conexion;
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("p_result", OracleType.Cursor).Direction= ParameterDirection.Output;
-            OracleDataAdapter adaptador = new OracleDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgvReportesMesa.DataSource = tabla;
-            conexion.Close();
+                OracleCommand comando = new OracleCommand("read_reporte_mesa", conexion);
+                comando.Connection = conexion;
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("p_result", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataAdapter adaptador = new OracleDataAdapter();
+                adaptador.SelectCommand = comando;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dgvReportesMesa.DataSource = tabla;
+                conexion.Close();
             }
             catch (Exception)
             {
@@ -128,38 +128,31 @@ namespace AJA
 
         private void btnActualizarReportesMesa_Click(object sender, EventArgs e)
         {
-            try
-            {
-                conexion.Open();
-                OracleCommand comando = new OracleCommand("actualizar", conexion);
-                comando.Connection = conexion;
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("p_reporte_id ", OracleType.Number).Value = Convert.ToInt32(txtReporteID.Text);
-                comando.Parameters.Add("p_fecha", OracleType.VarChar).Value = txtFecha.Text;
-                comando.Parameters.Add("p_identificacion_cliente", OracleType.Number).Value = Convert.ToInt32(txtIDCliente.Text);
-                comando.Parameters.Add("p_reserva_id", OracleType.Number).Value = Convert.ToInt32(txtReservaID.Text);
-                comando.Parameters.Add("p_hora", OracleType.VarChar).Value = txtHora.Text;
+
+            conexion.Open();
+            OracleCommand comando = new OracleCommand("actualizar", conexion);
+            comando.Connection = conexion;
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("p_reporte_id", OracleType.Number).Value = Convert.ToInt32(txtReporteID.Text);
+            comando.Parameters.Add("p_fecha", OracleType.VarChar).Value = txtFecha.Text;
+            comando.Parameters.Add("p_hora", OracleType.VarChar).Value = txtHora.Text;
+            comando.Parameters.Add("p_identificacion_cliente", OracleType.Number).Value = Convert.ToInt32(txtIDCliente.Text);
+            comando.Parameters.Add("p_reserva_id", OracleType.Number).Value = Convert.ToInt32(txtReservaID.Text);
 
 
-                comando.ExecuteNonQuery();
 
-                conexion.Close();
-                MessageBox.Show("Registro actualizado");
+            comando.ExecuteNonQuery();
 
-                txtFecha.Text = "";
-                txtIDCliente.Text = "";
-                txtReporteID.Text = "";
-                txtHora.Text = "";
-                txtReservaID.Text = "";
+            conexion.Close();
+            MessageBox.Show("Registro actualizado");
 
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Lo siento,algo fallo");
-            }
+            txtFecha.Text = "";
+            txtIDCliente.Text = "";
+            txtReporteID.Text = "";
+            txtHora.Text = "";
+            txtReservaID.Text = "";
         }
-
+    
         private void label3_Click(object sender, EventArgs e)
         {
             Stock Stock = new Stock();
