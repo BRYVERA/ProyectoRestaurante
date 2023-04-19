@@ -61,6 +61,24 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporteHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteHorario.Designer.cs">
+      <DependentUpon>reporteHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportMesa.Designer.cs">
+      <DependentUpon>reportMesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mesas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +99,9 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reporteHorario.resx">
+      <DependentUpon>reporteHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mesas.resx">
       <DependentUpon>Mesas.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,8 +115,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reportMesa.resx">
+      <DependentUpon>reportMesa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservas.resx">
       <DependentUpon>Reservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AJA
 {
-    public partial class Mesas : Form
+    public partial class Form1 : Form
     {
-        public Mesas()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void btnReservar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
