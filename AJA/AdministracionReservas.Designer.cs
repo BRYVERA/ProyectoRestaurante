@@ -58,6 +58,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdminReserva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel9
@@ -142,12 +144,13 @@
             this.groupBox7.Controls.Add(this.panel4);
             this.groupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(789, 290);
+            this.groupBox7.Location = new System.Drawing.Point(864, 283);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(266, 81);
+            this.groupBox7.Size = new System.Drawing.Size(341, 81);
             this.groupBox7.TabIndex = 40;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "N.º Mesa";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
             // comboBox1
             // 
@@ -155,11 +158,11 @@
             this.comboBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 30);
+            this.comboBox1.Location = new System.Drawing.Point(85, 31);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 25);
+            this.comboBox1.Size = new System.Drawing.Size(159, 25);
             this.comboBox1.TabIndex = 52;
-            this.comboBox1.Text = "      Seleccionar";
+            this.comboBox1.Text = "      Seleccionar ";
             // 
             // pictureBox7
             // 
@@ -187,7 +190,7 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Location = new System.Drawing.Point(21, 62);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(220, 1);
+            this.panel4.Size = new System.Drawing.Size(285, 1);
             this.panel4.TabIndex = 15;
             // 
             // groupBox5
@@ -199,20 +202,21 @@
             this.groupBox5.Controls.Add(this.panel3);
             this.groupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(789, 383);
+            this.groupBox5.Location = new System.Drawing.Point(863, 467);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(366, 81);
+            this.groupBox5.Size = new System.Drawing.Size(342, 81);
             this.groupBox5.TabIndex = 38;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Fecha";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(63, 29);
+            this.dateTimePicker1.Location = new System.Drawing.Point(74, 30);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(206, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(231, 22);
             this.dateTimePicker1.TabIndex = 52;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -242,8 +246,9 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Location = new System.Drawing.Point(19, 62);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 1);
+            this.panel3.Size = new System.Drawing.Size(285, 1);
             this.panel3.TabIndex = 14;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // groupBox3
             // 
@@ -254,12 +259,13 @@
             this.groupBox3.Controls.Add(this.panel2);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(1087, 191);
+            this.groupBox3.Location = new System.Drawing.Point(864, 376);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(266, 81);
+            this.groupBox3.Size = new System.Drawing.Size(341, 81);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hora";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // groupBox4
             // 
@@ -298,13 +304,13 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(20, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 1);
+            this.panel2.Size = new System.Drawing.Size(285, 1);
             this.panel2.TabIndex = 12;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1035, 113);
+            this.pictureBox3.Location = new System.Drawing.Point(1014, 107);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 50);
             this.pictureBox3.TabIndex = 36;
@@ -315,7 +321,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 149);
+            this.label2.Location = new System.Drawing.Point(46, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(357, 25);
             this.label2.TabIndex = 32;
@@ -328,7 +334,7 @@
             this.txtNumReserva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumReserva.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumReserva.ForeColor = System.Drawing.Color.White;
-            this.txtNumReserva.Location = new System.Drawing.Point(788, 513);
+            this.txtNumReserva.Location = new System.Drawing.Point(862, 529);
             this.txtNumReserva.Name = "txtNumReserva";
             this.txtNumReserva.Size = new System.Drawing.Size(134, 19);
             this.txtNumReserva.TabIndex = 31;
@@ -337,11 +343,11 @@
             // 
             this.dgvAdminReserva.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvAdminReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdminReserva.Location = new System.Drawing.Point(29, 186);
+            this.dgvAdminReserva.Location = new System.Drawing.Point(51, 186);
             this.dgvAdminReserva.Name = "dgvAdminReserva";
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
             this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAdminReserva.Size = new System.Drawing.Size(641, 207);
+            this.dgvAdminReserva.Size = new System.Drawing.Size(544, 207);
             this.dgvAdminReserva.TabIndex = 30;
             this.dgvAdminReserva.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdminReserva_CellContentClick);
             // 
@@ -349,18 +355,19 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(814, 219);
+            this.pictureBox4.Location = new System.Drawing.Point(889, 212);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(38, 31);
             this.pictureBox4.TabIndex = 47;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(811, 252);
+            this.panel5.Location = new System.Drawing.Point(886, 245);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(220, 1);
+            this.panel5.Size = new System.Drawing.Size(285, 1);
             this.panel5.TabIndex = 46;
             // 
             // txtID
@@ -369,7 +376,7 @@
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
-            this.txtID.Location = new System.Drawing.Point(864, 227);
+            this.txtID.Location = new System.Drawing.Point(939, 220);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(134, 19);
             this.txtID.TabIndex = 45;
@@ -377,15 +384,28 @@
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox9.Controls.Add(this.pictureBox2);
             this.groupBox9.Controls.Add(this.groupBox10);
             this.groupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.Color.White;
-            this.groupBox9.Location = new System.Drawing.Point(788, 193);
+            this.groupBox9.Location = new System.Drawing.Point(863, 186);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(266, 81);
+            this.groupBox9.Size = new System.Drawing.Size(342, 81);
             this.groupBox9.TabIndex = 48;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Identificación";
+            this.groupBox9.Enter += new System.EventHandler(this.groupBox9_Enter);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(276, 21);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 52;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // groupBox10
             // 
@@ -405,7 +425,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnActualizar.Location = new System.Drawing.Point(411, 417);
+            this.btnActualizar.Location = new System.Drawing.Point(387, 416);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(124, 41);
             this.btnActualizar.TabIndex = 51;
@@ -419,7 +439,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnEliminar.Location = new System.Drawing.Point(281, 417);
+            this.btnEliminar.Location = new System.Drawing.Point(257, 416);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(124, 41);
             this.btnEliminar.TabIndex = 50;
@@ -433,7 +453,7 @@
             this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnReservar.Location = new System.Drawing.Point(149, 417);
+            this.btnReservar.Location = new System.Drawing.Point(125, 416);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(124, 41);
             this.btnReservar.TabIndex = 49;
@@ -447,7 +467,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1387, 544);
+            this.ClientSize = new System.Drawing.Size(1387, 583);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnReservar);
@@ -481,6 +501,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdminReserva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +541,6 @@
         private System.Windows.Forms.Button btnReservar;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

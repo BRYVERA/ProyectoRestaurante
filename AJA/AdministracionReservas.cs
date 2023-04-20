@@ -19,6 +19,7 @@ namespace AJA
 
         int valorRetorno;
         int valorRetornoDos;
+        int indexRow;
 
         public AdministracionReservas()
         {
@@ -38,9 +39,22 @@ namespace AJA
 
         private void AdministracionReservas_Load(object sender, EventArgs e)
         {
-        
 
-        
+            conexion.Open();
+            OracleCommand comandos = new OracleCommand("mostrar_reserva_cliente", conexion);
+            comandos.CommandType = System.Data.CommandType.StoredProcedure;
+            comandos.Parameters.Add("reservas", OracleType.Cursor).Direction = ParameterDirection.Output;
+            //comandos.Parameters.Add("PID", OracleType.VarChar).Value = txtID.Text;
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comandos;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgvAdminReserva.DataSource = tabla;
+
+            conexion.Close();
+
+
             // Listo
             // Cargo las mesas que se encuntran unicamente desocupadas en un combobox
             // Listo
@@ -59,12 +73,6 @@ namespace AJA
             }
 
             conexion.Close();
-
-            // Falta
-            // Cargar Informacion sobre una reserva (combinacion de varias tablas view y lo ejecuta un sp) // 
-            // Falta
-
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -78,8 +86,8 @@ namespace AJA
             OracleCommand comando = new OracleCommand("eliminar_reserva", conexion);
 
             comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.Add("p_identificacion", OracleType.VarChar).Value = txtID.Text;
+    
+            comando.Parameters.Add("p_reserva_id", OracleType.Number).Value = txtNumReserva.Text;
 
             comando.Parameters.Add("RETURN_VALUE", OracleType.Int32).Direction = ParameterDirection.ReturnValue;
 
@@ -93,9 +101,9 @@ namespace AJA
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            // FALTA
+            // LISTO
             // Update una reserva
-            // FALTA
+      
 
             conexion.Open();
             OracleCommand command = new OracleCommand("editar_reserva", conexion);
@@ -107,7 +115,7 @@ namespace AJA
             command.Parameters.Add("p_hora", OracleType.VarChar).Value = txtHora.Text;
             command.Parameters.Add("P_FECHA", OracleType.VarChar).Value = dateTimePicker1.Value.ToString("dd-MMM-yyyy");
             command.Parameters.Add("P_MESA_ID", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
-            command.Parameters.Add("p_identificacion", OracleType.Number).Value = txtID.Text;
+            command.Parameters.Add("p_identificacion", OracleType.VarChar).Value = txtID.Text;
 
             command.Parameters.Add("RETURN_VALUE", OracleType.Int32).Direction = ParameterDirection.ReturnValue;
 
@@ -138,12 +146,9 @@ namespace AJA
                     comando.ExecuteNonQuery();
                     conexion.Close();
 
-                    //txtID.Text = "";
-                    //txtNombre.Text = "";
-                    //txtPrimerApellido.Text = "";
-                    //txtSegundoApellido.Text = "";
-                    //txtEmail.Text = "";
-                    //txtTelefono.Text = "";
+                    txtID.Text = "";
+                    txtHora.Text = "";
+                  
                 }
 
             }
@@ -155,9 +160,33 @@ namespace AJA
 
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            conexion.Open();
+            OracleCommand comandos = new OracleCommand("mostrar_reserva_cliente", conexion);
+            comandos.CommandType = System.Data.CommandType.StoredProcedure;
+            comandos.Parameters.Add("reservas", OracleType.Cursor).Direction = ParameterDirection.Output;
+            comandos.Parameters.Add("PID", OracleType.VarChar).Value = txtID.Text;
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comandos;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgvAdminReserva.DataSource = tabla;
+
+            conexion.Close();
+
+        }
+
         private void dgvAdminReserva_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dgvAdminReserva.Rows[indexRow];
+            txtNumReserva.Text = row.Cells[0].Value.ToString();
+            txtID.Text = row.Cells[1].Value.ToString();
+            //comboBox1.Items = row.Cells[2].Value.ToString();
+            txtHora.Text = row.Cells[2].Value.ToString();
+            //txtNombre.Text = row.Cells[1].Value.ToString();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -174,6 +203,38 @@ namespace AJA
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox9_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
     
 }

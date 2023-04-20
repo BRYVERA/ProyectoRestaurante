@@ -145,7 +145,7 @@ namespace AJA
         {
             try
             {
-                DialogResult resul = MessageBox.Show("Seguro que quieres registrar", "Registro", MessageBoxButtons.YesNo);
+                DialogResult resul = MessageBox.Show("Seguro que quieres actualizar", "Actualizar", MessageBoxButtons.YesNo);
                 if (resul == DialogResult.Yes)
                 {
                     conexion.Open();
