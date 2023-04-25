@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.btnRegistrarClientes = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
@@ -121,8 +121,8 @@
             this.dgvClientes.Location = new System.Drawing.Point(38, 205);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClientes.Size = new System.Drawing.Size(641, 207);
             this.dgvClientes.TabIndex = 1;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
@@ -539,7 +539,7 @@
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label1);
-            this.panel9.Location = new System.Drawing.Point(4, 2);
+            this.panel9.Location = new System.Drawing.Point(-1, -1);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1431, 64);
             this.panel9.TabIndex = 28;
@@ -632,9 +632,8 @@
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnRegistrarClientes);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Clientes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);

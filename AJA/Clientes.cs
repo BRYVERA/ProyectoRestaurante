@@ -24,24 +24,42 @@ namespace AJA
         }
 
         int indexRow;
+        int Number;
+
+        private void Metodo1()
+        {
+            Form1_Load(this, EventArgs.Empty);
+        }
 
         //CARGAR LOS DATOS DE LOS CLIENTES POR MEDIO DE UN CURSOR
         private void Form1_Load(object sender, EventArgs e)
         {
-            conexion.Open();
-            OracleCommand comando = new OracleCommand("mostrar_clientes", conexion);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            try
+            {
+                conexion.Open();
+                OracleCommand comando = new OracleCommand("mostrar_clientes", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
 
-            OracleDataAdapter adaptador = new OracleDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgvClientes.DataSource = tabla;
-            conexion.Close();
-        }
+                OracleDataAdapter adaptador = new OracleDataAdapter();
+                adaptador.SelectCommand = comando;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dgvClientes.DataSource = tabla;
+                conexion.Close();
+            }
 
-            //BOTON REGISTRO DE LOS CLIENTES POR SP
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Lo siento, los datos de los clientes no estan disponibles");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }  
+    }
+
+//BOTON REGISTRO DE LOS CLIENTES POR SP
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
@@ -71,43 +89,68 @@ namespace AJA
                     txtTelefono.Text = "";
                 }
 
-
-
-
             }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Lo siento,algo fallo");
+           
+                catch (OracleException ex)
+                {
+                        MessageBox.Show("El cliente ya se encuentra registrado");
+                }
+                catch (Exception ex)
+                {
+                         MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
             }
 
+           conexion.Close();
+
+            Metodo1();
 
         }
 
-
-        // OBTENGO EL VALOR DE CADA FILA Y LA ALMACENO EN EL TEXBOX 
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dgvClientes .Rows[indexRow];
-            txtID.Text = row.Cells[0].Value.ToString();
-            txtPrimerApellido.Text = row.Cells[2].Value.ToString();
-            txtSegundoApellido.Text = row.Cells[3].Value.ToString();
-            txtEmail.Text = row.Cells[4].Value.ToString();
-            txtTelefono.Text = row.Cells[5].Value.ToString();
-            txtNombre.Text = row.Cells[1].Value.ToString();
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         // OBTENGO EL ID DEL CLIENTE QUE SE DESEA ELIMINAR
+
+        private void btnActualizarCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult resul = MessageBox.Show("Seguro que quieres actualizar", "Actualizar", MessageBoxButtons.YesNo);
+                if (resul == DialogResult.Yes)
+                {
+                    conexion.Open();
+                    OracleCommand comando = new OracleCommand("actualizar_clientes", conexion);
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.Parameters.Add("P_IDENTIFICACION", OracleType.VarChar).Value = txtID.Text;
+                    comando.Parameters.Add("P_PRIMER_APELLIDO", OracleType.VarChar).Value = txtPrimerApellido.Text;
+                    comando.Parameters.Add("P_SEGUNDO_APELLIDO", OracleType.VarChar).Value = txtSegundoApellido.Text;
+                    comando.Parameters.Add("P_EMAIL", OracleType.VarChar).Value = txtEmail.Text;
+                    comando.Parameters.Add("P_TELEFONO", OracleType.Number).Value = Convert.ToInt32(txtTelefono.Text);
+                    comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
+                    comando.ExecuteNonQuery();
+                   
+
+                    txtID.Text = "";
+                    txtNombre.Text = "";
+                    txtPrimerApellido.Text = "";
+                    txtSegundoApellido.Text = "";
+                    txtEmail.Text = "";
+                    txtTelefono.Text = "";
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Registro del cliente no encontrado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }
+
+            conexion.Close();
+            Metodo1();
+        }
+
         private void btnEliminarClientes_Click(object sender, EventArgs e)
         {
-            
 
             try
             {
@@ -130,52 +173,47 @@ namespace AJA
                     txtTelefono.Text = "";
                 }
             }
-            catch(Exception)
+            catch (OracleException ex)
             {
-                MessageBox.Show("Lo siento,algo fallo");
+                MessageBox.Show("Registro no encontrado");
+                MessageBox.Show("Ingrese una identificación válida ");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }
+
+
+            conexion.Close();
+            Metodo1();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+
+        // OBTENGO EL VALOR DE CADA FILA Y LA ALMACENO EN EL TEXBOX 
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dgvClientes.Rows[indexRow];
+            txtID.Text = row.Cells[0].Value.ToString();
+            txtPrimerApellido.Text = row.Cells[2].Value.ToString();
+            txtSegundoApellido.Text = row.Cells[3].Value.ToString();
+            txtEmail.Text = row.Cells[4].Value.ToString();
+            txtTelefono.Text = row.Cells[5].Value.ToString();
+            txtNombre.Text = row.Cells[1].Value.ToString();
 
-        }
-
-        private void btnActualizarCliente_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult resul = MessageBox.Show("Seguro que quieres actualizar", "Actualizar", MessageBoxButtons.YesNo);
-                if (resul == DialogResult.Yes)
-                {
-                    conexion.Open();
-                    OracleCommand comando = new OracleCommand("actualizar_clientes", conexion);
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
-                    comando.Parameters.Add("P_IDENTIFICACION", OracleType.VarChar).Value = txtID.Text;
-                    comando.Parameters.Add("P_PRIMER_APELLIDO", OracleType.VarChar).Value = txtPrimerApellido.Text;
-                    comando.Parameters.Add("P_SEGUNDO_APELLIDO", OracleType.VarChar).Value = txtSegundoApellido.Text;
-                    comando.Parameters.Add("P_EMAIL", OracleType.VarChar).Value = txtEmail.Text;
-                    comando.Parameters.Add("P_TELEFONO", OracleType.Number).Value = Convert.ToInt32(txtTelefono.Text);
-                    comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
-                    comando.ExecuteNonQuery();
-                    conexion.Close();
-
-                    txtID.Text = "";
-                    txtNombre.Text = "";
-                    txtPrimerApellido.Text = "";
-                    txtSegundoApellido.Text = "";
-                    txtEmail.Text = "";
-                    txtTelefono.Text = "";
-                }
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Lo siento,algo fallo");
-            }
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

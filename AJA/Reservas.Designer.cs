@@ -56,7 +56,7 @@
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label1);
-            this.panel9.Location = new System.Drawing.Point(-5, 2);
+            this.panel9.Location = new System.Drawing.Point(-5, -1);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1431, 64);
             this.panel9.TabIndex = 29;
@@ -110,7 +110,7 @@
             this.dgvReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReservas.Location = new System.Drawing.Point(290, 232);
             this.dgvReservas.Name = "dgvReservas";
-            this.dgvReservas.Size = new System.Drawing.Size(838, 274);
+            this.dgvReservas.Size = new System.Drawing.Size(733, 274);
             this.dgvReservas.TabIndex = 30;
             this.dgvReservas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -210,7 +210,7 @@
             this.Controls.Add(this.btnAdministrarReservas);
             this.Controls.Add(this.dgvReservas);
             this.Controls.Add(this.panel9);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Reservas";
             this.Text = "Reservas";
             this.Load += new System.EventHandler(this.Reservas_Load);

@@ -30,19 +30,31 @@ namespace AJA
 
         private void Reservas_Load(object sender, EventArgs e)
         {
-            conexion.Open();
-            OracleCommand comando = new OracleCommand("mostrar_reservas", conexion);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("reservas", OracleType.Cursor).Direction = ParameterDirection.Output;
-            comando.Parameters.Add("PID", OracleType.VarChar).Value = txtID.Text;
+            try
+            {
+                conexion.Open();
+                OracleCommand comando = new OracleCommand("mostrar_reservas", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("reservas", OracleType.Cursor).Direction = ParameterDirection.Output;
+                comando.Parameters.Add("PID", OracleType.VarChar).Value = txtID.Text;
 
-            OracleDataAdapter adaptador = new OracleDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgvReservas.DataSource = tabla;
+                OracleDataAdapter adaptador = new OracleDataAdapter();
+                adaptador.SelectCommand = comando;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dgvReservas.DataSource = tabla;
 
-            conexion.Close();
+                conexion.Close();
+            }
+
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Lo siento, no se encuentran los datos disponibles");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show ("Ocurrio un error en el sistema, intenta de nuevo");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,8 +69,11 @@ namespace AJA
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
+            try
+            { 
             conexion.Open();
-            OracleCommand comando = new OracleCommand("mostrar_reserva_clientesss", conexion);
+            OracleCommand comando = new OracleCommand("mostrar_reservas", conexion);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("reservas", OracleType.Cursor).Direction = ParameterDirection.Output;
             comando.Parameters.Add("PID", OracleType.VarChar).Value = txtID.Text;
@@ -72,6 +87,16 @@ namespace AJA
             conexion.Close();
 
             txtID.Text = "";
+
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Lo siento, la reserva no se encuntra en nuestro sistema");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }
 
         }
     }
