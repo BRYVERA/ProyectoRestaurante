@@ -13,7 +13,7 @@ namespace AJA
 {
     public partial class reporteHorario : Form
     {
-        OracleConnection conexion = new OracleConnection("DATA SOURCE=ORCLL;PASSWORD=123;USER ID=TESTER;");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE=XE;PASSWORD=123;USER ID=TESTER;");
 
         public reporteHorario()
         {

@@ -96,18 +96,44 @@ namespace AJA
 
             comando.ExecuteNonQuery();
 
+
+            conexion.Close();
+
+            Metodo1();
+
         }
 
         private void btnActualizarCliente_Click(object sender, EventArgs e)
         {
+            DialogResult resul = MessageBox.Show("Seguro que quieres actualizar", "Actualizar", MessageBoxButtons.YesNo);
+            if (resul == DialogResult.Yes)
+            {
+                conexion.Open();
+                OracleCommand comando = new OracleCommand("actualizar_orden", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID", OracleType.Number).Value = Convert.ToInt32(txtID.Text);
+                comando.Parameters.Add("P_DETALLE_PRODUCTOS", OracleType.VarChar).Value = txtDetalle.Text;
+                comando.Parameters.Add("P_MESA", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
+
+                comando.ExecuteNonQuery();
+           
+                txtID.Text = "";
+                txtDetalle.Text = "";
+                comboBox1.Text = "";
+
+
+                conexion.Close();
+                Metodo1();
+
+            }
 
         }
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridOrden.Rows[indexRow];
+            txtID.Text = row.Cells[0].Value.ToString();
             txtDetalle.Text = row.Cells[1].Value.ToString();
            
         }
