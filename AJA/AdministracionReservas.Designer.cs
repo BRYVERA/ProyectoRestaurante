@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionReservas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -112,6 +112,7 @@
             this.label4.Size = new System.Drawing.Size(81, 24);
             this.label4.TabIndex = 31;
             this.label4.Text = "MESAS";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -123,6 +124,7 @@
             this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 30;
             this.label3.Text = "RESERVAS";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -134,6 +136,7 @@
             this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 29;
             this.label1.Text = "CLIENTES";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox7
             // 
@@ -163,7 +166,6 @@
             this.comboBox1.Size = new System.Drawing.Size(159, 25);
             this.comboBox1.TabIndex = 52;
             this.comboBox1.Tag = "";
-            this.comboBox1.Text = "        Seleccione";
             // 
             // pictureBox7
             // 
@@ -346,8 +348,8 @@
             this.dgvAdminReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdminReserva.Location = new System.Drawing.Point(51, 186);
             this.dgvAdminReserva.Name = "dgvAdminReserva";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            this.dgvAdminReserva.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAdminReserva.Size = new System.Drawing.Size(544, 207);
             this.dgvAdminReserva.TabIndex = 30;
             this.dgvAdminReserva.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdminReserva_CellContentClick);
@@ -485,6 +487,7 @@
             this.Controls.Add(this.txtNumReserva);
             this.Controls.Add(this.dgvAdminReserva);
             this.Name = "AdministracionReservas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
             this.Text = "AdministracionReservas";
             this.Load += new System.EventHandler(this.AdministracionReservas_Load);

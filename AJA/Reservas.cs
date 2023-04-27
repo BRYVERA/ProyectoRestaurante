@@ -55,6 +55,28 @@ namespace AJA
             {
                 MessageBox.Show ("Ocurrio un error en el sistema, intenta de nuevo");
             }
+
+            try
+            {
+                conexion.Open();
+            OracleCommand comandos = new OracleCommand("mostrar_auditoria_reserva", conexion);
+            comandos.CommandType = System.Data.CommandType.StoredProcedure;
+            comandos.Parameters.Add("auditoria", OracleType.Cursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter adaptador2 = new OracleDataAdapter();
+            adaptador2.SelectCommand = comandos;
+            DataTable tablas = new DataTable();
+            adaptador2.Fill(tablas);
+            data2.DataSource = tablas;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }
+
+            conexion.Close();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,7 +86,11 @@ namespace AJA
 
         private void btnAdministrarReservas_Click(object sender, EventArgs e)
         {
+            AdministracionReservas AdministracionReservas = new AdministracionReservas();
+            AdministracionReservas.Show();
 
+            Reservas Reservas = new Reservas();
+            Reservas.Close();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -98,6 +124,30 @@ namespace AJA
                 MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
             }
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ya te encuentras en esta parte del menú ");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Clientes Clientes = new Clientes();
+            Clientes.Show();
+
+            Reservas Reservas = new Reservas();
+            Reservas.Close();
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Mesas Mesas = new Mesas();
+            Mesas.Show();
+
+            Reservas Reservas = new Reservas();
+            Reservas.Close();
         }
     }
 }

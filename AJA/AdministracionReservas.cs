@@ -20,6 +20,7 @@ namespace AJA
         int valorRetorno;
         int valorRetornoDos;
         int indexRow;
+        bool status;
 
         public AdministracionReservas()
         {
@@ -82,8 +83,9 @@ namespace AJA
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
+            status = false;
 
-        try
+            try
           {
 
                 DialogResult resul = MessageBox.Show("Seguro que quieres registrar", "Registro", MessageBoxButtons.YesNo);
@@ -98,13 +100,17 @@ namespace AJA
                     comando.Parameters.Add("P_HORA", OracleType.VarChar).Value = txtHora.Text;
 
                     comando.ExecuteNonQuery();
+                    status = true;
 
-                    OracleCommand comand = new OracleCommand("cambiar_estado_mesa", conexion);
-                    comand.CommandType = System.Data.CommandType.StoredProcedure;
-                    comand.Parameters.Add("P_MESA_ID", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
-                    comand.Parameters.Add("p_estado", OracleType.VarChar).Value = "Ocupado";
+                    if (status == true)
+                    {
+                        OracleCommand comand = new OracleCommand("cambiar_estado_mesa", conexion);
+                        comand.CommandType = System.Data.CommandType.StoredProcedure;
+                        comand.Parameters.Add("P_MESA_ID", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
+                        comand.Parameters.Add("p_estado", OracleType.VarChar).Value = "Ocupado";
 
-                    comand.ExecuteNonQuery();
+                        comand.ExecuteNonQuery();
+                    }
 
                     txtID.Text = "";
                     txtHora.Text = "";
@@ -132,6 +138,7 @@ namespace AJA
             // Listo
             // Delete una reserva
             // Listo
+            status = false;
 
             try
             {
@@ -154,13 +161,17 @@ namespace AJA
 
                     valorRetornoDos = (int)comando.Parameters["RETURN_VALUE"].Value;
 
+                    status = true;
 
-                    OracleCommand comand = new OracleCommand("cambiar_estado_mesa", conexion);
-                    comand.CommandType = System.Data.CommandType.StoredProcedure;
-                    comand.Parameters.Add("P_MESA_ID", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
-                    comand.Parameters.Add("p_estado", OracleType.VarChar).Value = "Libre";
+                    if (status == true)
+                    {
+                        OracleCommand comand = new OracleCommand("cambiar_estado_mesa", conexion);
+                        comand.CommandType = System.Data.CommandType.StoredProcedure;
+                        comand.Parameters.Add("P_MESA_ID", OracleType.Number).Value = Convert.ToInt32(comboBox1.Text);
+                        comand.Parameters.Add("p_estado", OracleType.VarChar).Value = "Libre";
 
-                    comand.ExecuteNonQuery();
+                        comand.ExecuteNonQuery();
+                    }
 
                     txtID.Text = "";
                     txtHora.Text = "";
@@ -280,8 +291,10 @@ namespace AJA
                 DataGridViewRow row = dgvAdminReserva.Rows[indexRow];
                 txtNumReserva.Text = row.Cells[0].Value.ToString();
                 txtID.Text = row.Cells[1].Value.ToString();
+
                 string valor = row.Cells[2].Value.ToString();
                 comboBox1.Items.Add(valor);
+              
 
                 string valor2 = row.Cells[3].Value.ToString();
 
@@ -296,6 +309,35 @@ namespace AJA
             {
                 MessageBox.Show("Lo siento, error al enviar los datos");
             }
+
+        }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Clientes Clientes = new Clientes();
+            Clientes.Show();
+
+            AdministracionReservas AdministracionReservas = new AdministracionReservas();
+            AdministracionReservas.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Reservas Reservas = new Reservas();
+            Reservas.Show();
+
+            AdministracionReservas AdministracionReservas = new AdministracionReservas();
+            AdministracionReservas.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Mesas Mesas = new Mesas();
+            Mesas.Show();
+
+            AdministracionReservas AdministracionReservas = new AdministracionReservas();
+            AdministracionReservas.Close();
 
         }
 
@@ -354,7 +396,7 @@ namespace AJA
 
         }
 
-
+      
     }
     
 }

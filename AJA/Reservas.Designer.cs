@@ -42,11 +42,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.data2 = new System.Windows.Forms.DataGridView();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel9
@@ -82,6 +84,7 @@
             this.label4.Size = new System.Drawing.Size(81, 24);
             this.label4.TabIndex = 31;
             this.label4.Text = "MESAS";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -93,6 +96,7 @@
             this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 30;
             this.label3.Text = "RESERVAS";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -104,11 +108,12 @@
             this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 29;
             this.label1.Text = "CLIENTES";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvReservas
             // 
             this.dgvReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReservas.Location = new System.Drawing.Point(290, 232);
+            this.dgvReservas.Location = new System.Drawing.Point(207, 225);
             this.dgvReservas.Name = "dgvReservas";
             this.dgvReservas.Size = new System.Drawing.Size(733, 274);
             this.dgvReservas.TabIndex = 30;
@@ -120,7 +125,7 @@
             this.btnAdministrarReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrarReservas.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministrarReservas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnAdministrarReservas.Location = new System.Drawing.Point(622, 528);
+            this.btnAdministrarReservas.Location = new System.Drawing.Point(539, 521);
             this.btnAdministrarReservas.Name = "btnAdministrarReservas";
             this.btnAdministrarReservas.Size = new System.Drawing.Size(160, 41);
             this.btnAdministrarReservas.TabIndex = 31;
@@ -132,7 +137,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(320, 152);
+            this.pictureBox2.Location = new System.Drawing.Point(237, 145);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 31);
             this.pictureBox2.TabIndex = 34;
@@ -141,7 +146,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(317, 185);
+            this.panel1.Location = new System.Drawing.Point(234, 178);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 1);
             this.panel1.TabIndex = 33;
@@ -152,7 +157,7 @@
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
-            this.txtID.Location = new System.Drawing.Point(370, 160);
+            this.txtID.Location = new System.Drawing.Point(287, 153);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(134, 19);
             this.txtID.TabIndex = 32;
@@ -163,7 +168,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(294, 126);
+            this.groupBox1.Location = new System.Drawing.Point(211, 119);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(266, 81);
             this.groupBox1.TabIndex = 35;
@@ -188,7 +193,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnBuscar.Location = new System.Drawing.Point(581, 166);
+            this.btnBuscar.Location = new System.Drawing.Point(498, 159);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(124, 41);
             this.btnBuscar.TabIndex = 36;
@@ -196,12 +201,21 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // data2
+            // 
+            this.data2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data2.Location = new System.Drawing.Point(1006, 225);
+            this.data2.Name = "data2";
+            this.data2.Size = new System.Drawing.Size(240, 274);
+            this.data2.TabIndex = 37;
+            // 
             // Reservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1420, 580);
+            this.Controls.Add(this.data2);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
@@ -212,6 +226,7 @@
             this.Controls.Add(this.panel9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Reservas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reservas";
             this.Load += new System.EventHandler(this.Reservas_Load);
             this.panel9.ResumeLayout(false);
@@ -220,6 +235,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.data2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +256,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView data2;
     }
 }

@@ -46,7 +46,7 @@ namespace AJA
                 DataTable tabla = new DataTable();
                 adaptador.Fill(tabla);
                 dgvClientes.DataSource = tabla;
-                conexion.Close();
+               
             }
 
             catch (OracleException ex)
@@ -56,8 +56,39 @@ namespace AJA
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
-            }  
-    }
+            }
+
+            conexion.Close();
+
+            try
+            {
+
+                conexion.Open();
+
+                OracleCommand cmd = new OracleCommand("CantidadClientes", conexion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("RETURN_VALUE", OracleType.Int32).Direction = ParameterDirection.ReturnValue;
+
+                cmd.ExecuteNonQuery();
+
+                int valorRetorno = (int)cmd.Parameters["RETURN_VALUE"].Value;
+
+                textBox1.Text = valorRetorno.ToString();
+            }
+
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Lo siento, los datos de los clientes no estan disponibles");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }
+
+            conexion.Close();
+        }
 
 //BOTON REGISTRO DE LOS CLIENTES POR SP
 
@@ -79,7 +110,7 @@ namespace AJA
                     comando.Parameters.Add("P_TELEFONO", OracleType.Number).Value = Convert.ToInt32(txtTelefono.Text);
                     comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
                     comando.ExecuteNonQuery();
-                    conexion.Close();
+               
 
                     txtID.Text = "";
                     txtNombre.Text = "";
@@ -205,7 +236,7 @@ namespace AJA
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Ya te encuentras en esta parte del menú ");
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -222,6 +253,18 @@ namespace AJA
         {
             Reservas Reservas = new Reservas();
             Reservas.Show();
+
+            Clientes Clientes = new Clientes();
+            Clientes.Close();
+
+        
+        }
+
+        private void MenuMesas_Click(object sender, EventArgs e)
+        {
+            Mesas Mesas = new Mesas();
+            Mesas.Show();
+
             Clientes Clientes = new Clientes();
             Clientes.Close();
         }

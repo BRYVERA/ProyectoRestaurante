@@ -25,10 +25,6 @@ namespace AJA
             InitializeComponent();
         }
 
-        //CREAR METODO ACTUALICE TOMANDO EL MESAS LOAD 
-        //CREAR METODO ACTUALICE TOMANDO EL MESAS LOAD 
-        //CREAR METODO ACTUALICE TOMANDO EL MESAS LOAD 
-
         private void Metodo1()
         {
             Mesas_Load(this, EventArgs.Empty);
@@ -209,6 +205,29 @@ namespace AJA
 
         }
 
-      
+        private void label4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ya te encuentras en esta parte del menú ");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+            Reservas Reservas = new Reservas();
+            Reservas.Show();
+
+            Mesas Mesas = new Mesas();
+            Mesas.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Clientes Clientes = new Clientes();
+            Clientes.Show();
+
+            Mesas Mesas = new Mesas();
+            Mesas.Close();
+
+        }
     }
 }

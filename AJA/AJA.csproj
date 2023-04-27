@@ -61,6 +61,30 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadoCocina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadoCocina.Designer.cs">
+      <DependentUpon>EstadoCocina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes.Designer.cs">
+      <DependentUpon>Ordenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
     <Compile Include="reporteHorario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +122,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadoCocina.resx">
+      <DependentUpon>EstadoCocina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes.resx">
+      <DependentUpon>Ordenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporteHorario.resx">
       <DependentUpon>reporteHorario.cs</DependentUpon>

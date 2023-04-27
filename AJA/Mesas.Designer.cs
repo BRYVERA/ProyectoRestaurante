@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mesas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnReservar = new System.Windows.Forms.Button();
@@ -44,10 +44,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -66,7 +67,6 @@
             this.dgvMesas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -212,6 +212,7 @@
             this.label4.Size = new System.Drawing.Size(81, 24);
             this.label4.TabIndex = 31;
             this.label4.Text = "MESAS";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -223,6 +224,7 @@
             this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 30;
             this.label3.Text = "RESERVAS";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -234,6 +236,7 @@
             this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 29;
             this.label1.Text = "CLIENTES";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox7
             // 
@@ -250,6 +253,22 @@
             this.groupBox7.TabIndex = 61;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Estado";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Libre",
+            "Ocupado"});
+            this.comboBox1.Location = new System.Drawing.Point(68, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(159, 25);
+            this.comboBox1.TabIndex = 53;
+            this.comboBox1.Tag = "";
+            this.comboBox1.Text = "        Seleccione";
             // 
             // pictureBox7
             // 
@@ -272,6 +291,14 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Identificación";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(21, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(220, 1);
+            this.panel4.TabIndex = 15;
+            // 
             // txtEstado
             // 
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -283,14 +310,6 @@
             this.txtEstado.Size = new System.Drawing.Size(145, 19);
             this.txtEstado.TabIndex = 5;
             this.txtEstado.Visible = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(21, 62);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(220, 1);
-            this.panel4.TabIndex = 15;
             // 
             // groupBox5
             // 
@@ -461,8 +480,8 @@
             this.dgvMesas.Location = new System.Drawing.Point(36, 189);
             this.dgvMesas.Name = "dgvMesas";
             this.dgvMesas.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            this.dgvMesas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            this.dgvMesas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMesas.Size = new System.Drawing.Size(641, 207);
             this.dgvMesas.TabIndex = 52;
             this.dgvMesas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMesas_CellContentClick);
@@ -492,22 +511,6 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Identificación";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Libre",
-            "Ocupado"});
-            this.comboBox1.Location = new System.Drawing.Point(68, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 25);
-            this.comboBox1.TabIndex = 53;
-            this.comboBox1.Tag = "";
-            this.comboBox1.Text = "        Seleccione";
             // 
             // Mesas
             // 
