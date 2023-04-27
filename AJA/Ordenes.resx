@@ -118,32 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnAxMGKSnA4HgOAAABfElEQVRYR+2XuUqDQRRGk9TRB0gX
-        sFBJl0obsVQLkaBPIajBWi2jb2BjITaKDyFWFoL6AG5o4YKlEESM52Y+kLgk+W/mt8qBA+GfmXOzkSXT
-        x0Oj0cjiKE5Ju53VcnowJI8beI/fucM1zGt7XAiX8Ao7cYklHYsDwSI+W71LXnBIx3uDkL3ep1ZNyAn2
-        /r4gUmnmfMwp44fIYWi52FfGD5Hb0HJxo4wfIvXQclFXxg+Rp9By8aCMHyLHoeXiSBk/RFZDy0VVGT9E
-        BvCxmUuGvXSDyvQGoQX8sGqX2N6KjseB4BK+W70DtmdRx+JCeBIvbMofnOGEtqcDA3I4juu4I+1reAxz
-        2tYnLjy19ntgFlewhtu4iwdyT9c2sYq2t6jjPggUcAuv0YudtUZB2e7ggD3SV4yFtZaVbw8b7WlMi5rG
-        /A4bZjDJJ15SrD2tcT9hsd2HTCzONa4VFsph/V8oa+wXXLR/N2/N5XSxGcMa2woLdifmU3ZE4/pAJvMJ
-        5Y+oOaSQMWEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnAxMGKSnA4HgOAAABfElEQVRYR+2XuUqDQRRGk9TRB0gX
-        sFBJl0obsVQLkaBPIajBWi2jb2BjITaKDyFWFoL6AG5o4YKlEESM52Y+kLgk+W/mt8qBA+GfmXOzkSXT
-        x0Oj0cjiKE5Ju53VcnowJI8beI/fucM1zGt7XAiX8Ao7cYklHYsDwSI+W71LXnBIx3uDkL3ep1ZNyAn2
-        /r4gUmnmfMwp44fIYWi52FfGD5Hb0HJxo4wfIvXQclFXxg+Rp9By8aCMHyLHoeXiSBk/RFZDy0VVGT9E
-        BvCxmUuGvXSDyvQGoQX8sGqX2N6KjseB4BK+W70DtmdRx+JCeBIvbMofnOGEtqcDA3I4juu4I+1reAxz
-        2tYnLjy19ntgFlewhtu4iwdyT9c2sYq2t6jjPggUcAuv0YudtUZB2e7ggD3SV4yFtZaVbw8b7WlMi5rG
-        /A4bZjDJJ15SrD2tcT9hsd2HTCzONa4VFsph/V8oa+wXXLR/N2/N5XSxGcMa2woLdifmU3ZE4/pAJvMJ
-        5Y+oOaSQMWEAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1

@@ -16,7 +16,7 @@ namespace AJA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new reporteHorario());
+            Application.Run(new Ordenes());
         }
     }
 }
