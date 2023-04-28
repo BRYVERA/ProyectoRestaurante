@@ -33,6 +33,7 @@
             this.btnEliminarClientes = new System.Windows.Forms.Button();
             this.btnRegistrarClientes = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,18 +44,18 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridOrden = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.MenuMesas = new System.Windows.Forms.Label();
             this.MenuReservas = new System.Windows.Forms.Label();
             this.MenuClientes = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrden)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +116,14 @@
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "N.º Mesa";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(76, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 26);
+            this.comboBox1.TabIndex = 41;
             // 
             // groupBox4
             // 
@@ -211,14 +220,25 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.pictureBox5);
             this.panel9.Controls.Add(this.pictureBox8);
-            this.panel9.Controls.Add(this.MenuMesas);
             this.panel9.Controls.Add(this.MenuReservas);
             this.panel9.Controls.Add(this.MenuClientes);
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1431, 64);
             this.panel9.TabIndex = 39;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(1025, 13);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox5.TabIndex = 53;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox8
             // 
@@ -231,17 +251,6 @@
             this.pictureBox8.TabIndex = 29;
             this.pictureBox8.TabStop = false;
             // 
-            // MenuMesas
-            // 
-            this.MenuMesas.AutoSize = true;
-            this.MenuMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuMesas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.MenuMesas.Location = new System.Drawing.Point(698, 21);
-            this.MenuMesas.Name = "MenuMesas";
-            this.MenuMesas.Size = new System.Drawing.Size(101, 24);
-            this.MenuMesas.TabIndex = 31;
-            this.MenuMesas.Text = "CAMBIAR";
-            // 
             // MenuReservas
             // 
             this.MenuReservas.AutoSize = true;
@@ -249,20 +258,22 @@
             this.MenuReservas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.MenuReservas.Location = new System.Drawing.Point(541, 21);
             this.MenuReservas.Name = "MenuReservas";
-            this.MenuReservas.Size = new System.Drawing.Size(101, 24);
+            this.MenuReservas.Size = new System.Drawing.Size(110, 24);
             this.MenuReservas.TabIndex = 30;
-            this.MenuReservas.Text = "CAMBIAR";
+            this.MenuReservas.Text = "ORDENES";
+            this.MenuReservas.Click += new System.EventHandler(this.MenuReservas_Click);
             // 
             // MenuClientes
             // 
             this.MenuClientes.AutoSize = true;
             this.MenuClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.MenuClientes.Location = new System.Drawing.Point(401, 21);
+            this.MenuClientes.Location = new System.Drawing.Point(386, 21);
             this.MenuClientes.Name = "MenuClientes";
-            this.MenuClientes.Size = new System.Drawing.Size(101, 24);
+            this.MenuClientes.Size = new System.Drawing.Size(137, 24);
             this.MenuClientes.TabIndex = 29;
-            this.MenuClientes.Text = "CAMBIAR";
+            this.MenuClientes.Text = "PRODUCTOS";
+            this.MenuClientes.Click += new System.EventHandler(this.MenuClientes_Click);
             // 
             // txtID
             // 
@@ -274,14 +285,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(134, 19);
             this.txtID.TabIndex = 40;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(76, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 41;
             // 
             // Ordenes
             // 
@@ -310,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrden)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -333,10 +337,10 @@
         private System.Windows.Forms.DataGridView dataGridOrden;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label MenuMesas;
         private System.Windows.Forms.Label MenuReservas;
         private System.Windows.Forms.Label MenuClientes;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

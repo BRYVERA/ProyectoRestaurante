@@ -83,10 +83,11 @@ namespace AJA
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            status = false;
+           
 
             try
           {
+                status = false;
 
                 DialogResult resul = MessageBox.Show("Seguro que quieres registrar", "Registro", MessageBoxButtons.YesNo);
                 if (resul == DialogResult.Yes)
@@ -138,10 +139,11 @@ namespace AJA
             // Listo
             // Delete una reserva
             // Listo
-            status = false;
+           
 
             try
             {
+                status = false;
 
                 DialogResult resul = MessageBox.Show("Seguro que quieres eliminar", "Eliminar", MessageBoxButtons.YesNo);
                 if (resul == DialogResult.Yes)
@@ -307,7 +309,7 @@ namespace AJA
             }
             catch
             {
-                MessageBox.Show("Lo siento, error al enviar los datos");
+                MessageBox.Show("La carga de los datos esta durando mas de lo esperado...., ");
             }
 
         }
@@ -396,7 +398,11 @@ namespace AJA
 
         }
 
-      
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+        }
     }
     
 }

@@ -218,5 +218,36 @@ namespace AJA
             textBox2.Text = horario_selected_entrada;
             textBox3.Text = horario_selected_salida;
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ya te encuentras en esta parte del menú ");
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+            EmpleadosForm EmpleadosForm = new EmpleadosForm();
+            EmpleadosForm.Show();
+
+            HorariosForm HorariosForm = new HorariosForm();
+            HorariosForm.Close();
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            RolesForm RolesForm = new RolesForm();
+            RolesForm.Show();
+
+            HorariosForm HorariosForm = new HorariosForm();
+            HorariosForm.Close();
+        }
     }
 }

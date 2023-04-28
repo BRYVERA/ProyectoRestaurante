@@ -29,50 +29,66 @@ namespace AJA
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            conexion.Open();
-            OracleCommand comandos = new OracleCommand("sp_login", conexion);
-            comandos.CommandType = System.Data.CommandType.StoredProcedure;
 
-            comandos.Parameters.Add("p_empleado_id", OracleType.Number).Value = Convert.ToInt32(txtID.Text);
-            comandos.Parameters.Add("p_password", OracleType.VarChar).Value = txtPassword.Text;
-          
-
-            comandos.Parameters.Add("p_role", OracleType.Number, 4);
-            comandos.Parameters["p_role"].Direction = ParameterDirection.Output;
-
-
-            comandos.ExecuteNonQuery();
-
-            string rolString = comandos.Parameters["p_role"].Value.ToString();
-            int rol = Int32.Parse(rolString);
-
-          
-
-            conexion.Close();
-
-            if (rol == 1)
+            try
             {
-                Form form1 = new Clientes();
-                form1.Show();
-            }
-            else if (rol == 2)
-            {
-                Form form2 = new reporteHorario();
-                form2.Show();
-            }
-            else if (rol == 3)
-            {
-                Form form3 = new Stock();
-                form3.Show();
-            }
-            else
-            {
-                MessageBox.Show("Opción inválida"); // muestra un mensaje de error si la opción seleccionada no es válida
-            }
+                conexion.Open();
+
+                OracleCommand comandos = new OracleCommand("sp_login", conexion);
+                comandos.CommandType = System.Data.CommandType.StoredProcedure;
+
+                comandos.Parameters.Add("p_empleado_id", OracleType.Number).Value = Convert.ToInt32(txtID.Text);
+                comandos.Parameters.Add("p_password", OracleType.VarChar).Value = txtPassword.Text;
 
 
+                comandos.Parameters.Add("p_role", OracleType.Number, 4);
+                comandos.Parameters["p_role"].Direction = ParameterDirection.Output;
 
-            //MessageBox.Show("Lo siento, los datos de la reserva no estan disponibles");
-        }
+
+                comandos.ExecuteNonQuery();
+
+                string rolString = comandos.Parameters["p_role"].Value.ToString();
+                int rol = Int32.Parse(rolString);
+
+
+                if (rol == 1)
+                {
+                    Form form1 = new Clientes();
+                    form1.Show();
+                }
+                else if (rol == 2)
+                {
+                    Form form2 = new reporteHorario();
+                    form2.Show();
+                }
+                else if (rol == 3)
+                {
+                    Form form3 = new Stock();
+                    form3.Show();
+                }
+                else if (rol == 4)
+                {
+                    Form form3 = new Productos();
+                    form3.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("Datos incorrectos");
+                }
+
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error en el sistema, intenta de nuevo");
+            }
+
+                conexion.Close();
+                                    
+            }
     }
 }

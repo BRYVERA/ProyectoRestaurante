@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.MenuMesas = new System.Windows.Forms.Label();
             this.MenuReservas = new System.Windows.Forms.Label();
             this.MenuClientes = new System.Windows.Forms.Label();
             this.dataGridProductos = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,17 +49,17 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtcosto = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtInventario = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtTipo = new System.Windows.Forms.TextBox();
-            this.txtcosto = new System.Windows.Forms.TextBox();
-            this.txtInventario = new System.Windows.Forms.TextBox();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -74,14 +75,25 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.pictureBox5);
             this.panel9.Controls.Add(this.pictureBox8);
-            this.panel9.Controls.Add(this.MenuMesas);
             this.panel9.Controls.Add(this.MenuReservas);
             this.panel9.Controls.Add(this.MenuClientes);
             this.panel9.Location = new System.Drawing.Point(-30, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1431, 64);
             this.panel9.TabIndex = 50;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(940, 12);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox5.TabIndex = 53;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox8
             // 
@@ -94,17 +106,6 @@
             this.pictureBox8.TabIndex = 29;
             this.pictureBox8.TabStop = false;
             // 
-            // MenuMesas
-            // 
-            this.MenuMesas.AutoSize = true;
-            this.MenuMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuMesas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.MenuMesas.Location = new System.Drawing.Point(666, 22);
-            this.MenuMesas.Name = "MenuMesas";
-            this.MenuMesas.Size = new System.Drawing.Size(101, 24);
-            this.MenuMesas.TabIndex = 31;
-            this.MenuMesas.Text = "CAMBIAR";
-            // 
             // MenuReservas
             // 
             this.MenuReservas.AutoSize = true;
@@ -112,20 +113,22 @@
             this.MenuReservas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.MenuReservas.Location = new System.Drawing.Point(509, 22);
             this.MenuReservas.Name = "MenuReservas";
-            this.MenuReservas.Size = new System.Drawing.Size(101, 24);
+            this.MenuReservas.Size = new System.Drawing.Size(110, 24);
             this.MenuReservas.TabIndex = 30;
-            this.MenuReservas.Text = "CAMBIAR";
+            this.MenuReservas.Text = "ORDENES";
+            this.MenuReservas.Click += new System.EventHandler(this.MenuReservas_Click);
             // 
             // MenuClientes
             // 
             this.MenuClientes.AutoSize = true;
             this.MenuClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.MenuClientes.Location = new System.Drawing.Point(369, 22);
+            this.MenuClientes.Location = new System.Drawing.Point(355, 22);
             this.MenuClientes.Name = "MenuClientes";
-            this.MenuClientes.Size = new System.Drawing.Size(101, 24);
+            this.MenuClientes.Size = new System.Drawing.Size(137, 24);
             this.MenuClientes.TabIndex = 29;
-            this.MenuClientes.Text = "CAMBIAR";
+            this.MenuClientes.Text = "PRODUCTOS";
+            this.MenuClientes.Click += new System.EventHandler(this.MenuClientes_Click);
             // 
             // dataGridProductos
             // 
@@ -134,6 +137,7 @@
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.Size = new System.Drawing.Size(343, 241);
             this.dataGridProductos.TabIndex = 49;
+            this.dataGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProductos_CellContentClick);
             // 
             // groupBox3
             // 
@@ -150,6 +154,17 @@
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tipo Producto";
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.ForeColor = System.Drawing.Color.White;
+            this.txtTipo.Location = new System.Drawing.Point(74, 33);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(134, 19);
+            this.txtTipo.TabIndex = 52;
             // 
             // groupBox4
             // 
@@ -292,6 +307,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Costo";
             // 
+            // txtcosto
+            // 
+            this.txtcosto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtcosto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcosto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcosto.ForeColor = System.Drawing.Color.White;
+            this.txtcosto.Location = new System.Drawing.Point(74, 36);
+            this.txtcosto.Name = "txtcosto";
+            this.txtcosto.Size = new System.Drawing.Size(134, 19);
+            this.txtcosto.TabIndex = 53;
+            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Transparent;
@@ -337,6 +363,17 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Codigo Inventario";
             // 
+            // txtInventario
+            // 
+            this.txtInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInventario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInventario.ForeColor = System.Drawing.Color.White;
+            this.txtInventario.Location = new System.Drawing.Point(76, 33);
+            this.txtInventario.Name = "txtInventario";
+            this.txtInventario.Size = new System.Drawing.Size(134, 19);
+            this.txtInventario.TabIndex = 54;
+            // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.Transparent;
@@ -366,39 +403,6 @@
             this.panel4.Size = new System.Drawing.Size(220, 1);
             this.panel4.TabIndex = 12;
             // 
-            // txtTipo
-            // 
-            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.ForeColor = System.Drawing.Color.White;
-            this.txtTipo.Location = new System.Drawing.Point(74, 33);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(134, 19);
-            this.txtTipo.TabIndex = 52;
-            // 
-            // txtcosto
-            // 
-            this.txtcosto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtcosto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtcosto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcosto.ForeColor = System.Drawing.Color.White;
-            this.txtcosto.Location = new System.Drawing.Point(74, 36);
-            this.txtcosto.Name = "txtcosto";
-            this.txtcosto.Size = new System.Drawing.Size(134, 19);
-            this.txtcosto.TabIndex = 53;
-            // 
-            // txtInventario
-            // 
-            this.txtInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInventario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInventario.ForeColor = System.Drawing.Color.White;
-            this.txtInventario.Location = new System.Drawing.Point(76, 33);
-            this.txtInventario.Name = "txtInventario";
-            this.txtInventario.Size = new System.Drawing.Size(134, 19);
-            this.txtInventario.TabIndex = 54;
-            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +426,7 @@
             this.Load += new System.EventHandler(this.Productos_Load);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -443,7 +448,6 @@
         #endregion
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label MenuMesas;
         private System.Windows.Forms.Label MenuReservas;
         private System.Windows.Forms.Label MenuClientes;
         private System.Windows.Forms.DataGridView dataGridProductos;
@@ -470,5 +474,6 @@
         private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.TextBox txtcosto;
         private System.Windows.Forms.TextBox txtInventario;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

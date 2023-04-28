@@ -54,8 +54,9 @@ namespace AJA
         private void btnRegistrarStock_Click(object sender, EventArgs e)
         {
 
-            
-                    conexion.Open();
+            try
+            {
+                conexion.Open();
                     OracleCommand comando = new OracleCommand("ADD_STOCK", conexion);
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("P_INVENTARIO_ID", OracleType.Number).Value = Convert.ToInt32(txtInventarioID.Text);
@@ -74,10 +75,14 @@ namespace AJA
                     txtStockTotal.Text = "";
                     txtTipoDeProducto.Text = "";
 
-
-
-              
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Lo siento,algo fallo");
+            }
+
+
+        }
         //Eliminar
         private void btnEliminarStock_Click(object sender, EventArgs e)
         {
@@ -109,8 +114,9 @@ namespace AJA
         //Actualizar
         private void btnActualizarStock_Click(object sender, EventArgs e)
         {
-
-            conexion.Open();
+            try
+            {
+                conexion.Open();
             OracleCommand comando = new OracleCommand("UPDATE_STOCK", conexion);
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Add("P_INVENTARIO_ID", OracleType.Number).Value = Convert.ToInt32(txtInventarioID.Text);
@@ -129,7 +135,12 @@ namespace AJA
                     txtDescripcion.Text = "";
                     txtStockTotal.Text = "";
                     txtTipoDeProducto.Text = "";
-                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lo siento,algo fallo");
+            }
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -151,6 +162,12 @@ namespace AJA
             Stock.Show();
             Stock reporte = new Stock();
             reporte.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
         }
     }
     }

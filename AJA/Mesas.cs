@@ -192,13 +192,12 @@ namespace AJA
                 string valor = row.Cells[3].Value.ToString();
                 comboBox1.Items.Add(valor);
                 txtUbicacion.Text = row.Cells[4].Value.ToString();
-            }
-            catch
+           }
+            catch (Exception ex)
             {
-                MessageBox.Show("Lo siento, error al enviar los datos de la tabla");
+                MessageBox.Show("La carga de los datos esta durando mas de lo esperado...., ");
             }
-
-}
+    }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -228,6 +227,12 @@ namespace AJA
             Mesas Mesas = new Mesas();
             Mesas.Close();
 
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
         }
     }
 }

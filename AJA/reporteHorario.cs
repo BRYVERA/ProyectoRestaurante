@@ -129,6 +129,12 @@ namespace AJA
             reporte.Close();
 
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+        }
     }
     }
     

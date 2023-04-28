@@ -236,5 +236,34 @@ namespace AJA
             button2.Text = "Editar";
             textBox1.Text = rol_selected_name;
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ya te encuentras en esta parte del menú ");
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            HorariosForm HorariosForm = new HorariosForm();
+            HorariosForm.Show();
+
+            RolesForm RolesForm = new RolesForm();
+            RolesForm.Close();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            EmpleadosForm EmpleadosForm = new EmpleadosForm();
+            EmpleadosForm.Show();
+
+            RolesForm RolesForm = new RolesForm();
+            RolesForm.Close();
+        }
     }
 }

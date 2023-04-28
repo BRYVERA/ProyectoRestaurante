@@ -93,6 +93,8 @@ namespace AJA
 
                 MessageBox.Show("Lo siento,algo fallo");
             }
+
+            
         }
 
         //Eliminar Reporte
@@ -122,14 +124,18 @@ namespace AJA
             {
                 MessageBox.Show("Lo siento,algo fallo");
             }
+
+            
         }
 
         //Actualizar 
 
         private void btnActualizarReportesMesa_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            conexion.Open();
+                conexion.Open();
             OracleCommand comando = new OracleCommand("actualizar", conexion);
             comando.Connection = conexion;
             comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -143,7 +149,7 @@ namespace AJA
 
             comando.ExecuteNonQuery();
 
-            conexion.Close();
+           
             MessageBox.Show("Registro actualizado");
 
             txtFecha.Text = "";
@@ -151,6 +157,14 @@ namespace AJA
             txtReporteID.Text = "";
             txtHora.Text = "";
             txtReservaID.Text = "";
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lo siento,algo fallo");
+            }
+
+            conexion.Close();
         }
     
         private void label3_Click(object sender, EventArgs e)
@@ -167,6 +181,12 @@ namespace AJA
             Stock.Show();
             reservaID reporte = new reservaID();
             reporte.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
         }
     }
 

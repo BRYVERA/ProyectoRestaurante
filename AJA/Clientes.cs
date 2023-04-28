@@ -223,15 +223,21 @@ namespace AJA
         // OBTENGO EL VALOR DE CADA FILA Y LA ALMACENO EN EL TEXBOX 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dgvClientes.Rows[indexRow];
-            txtID.Text = row.Cells[0].Value.ToString();
-            txtPrimerApellido.Text = row.Cells[2].Value.ToString();
-            txtSegundoApellido.Text = row.Cells[3].Value.ToString();
-            txtEmail.Text = row.Cells[4].Value.ToString();
-            txtTelefono.Text = row.Cells[5].Value.ToString();
-            txtNombre.Text = row.Cells[1].Value.ToString();
-
+            try
+            {
+                indexRow = e.RowIndex;
+                DataGridViewRow row = dgvClientes.Rows[indexRow];
+                txtID.Text = row.Cells[0].Value.ToString();
+                txtPrimerApellido.Text = row.Cells[2].Value.ToString();
+                txtSegundoApellido.Text = row.Cells[3].Value.ToString();
+                txtEmail.Text = row.Cells[4].Value.ToString();
+                txtTelefono.Text = row.Cells[5].Value.ToString();
+                txtNombre.Text = row.Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("La carga de los datos esta durando mas de lo esperado...., ");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -267,6 +273,13 @@ namespace AJA
 
             Clientes Clientes = new Clientes();
             Clientes.Close();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+           
         }
     }
 }
