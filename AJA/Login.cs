@@ -61,9 +61,9 @@ namespace AJA
                     Form form2 = new reporteHorario();
                     form2.Show();
                 }
-                else if (rol == 3)
+                else if (rol == 3)  
                 {
-                    Form form3 = new Stock();
+                    Form form3 = new RolesForm();
                     form3.Show();
                 }
                 else if (rol == 4)

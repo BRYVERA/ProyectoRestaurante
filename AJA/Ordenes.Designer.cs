@@ -49,6 +49,7 @@
             this.MenuReservas = new System.Windows.Forms.Label();
             this.MenuClientes = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -280,11 +281,22 @@
             this.txtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.ForeColor = System.Drawing.Color.White;
+            this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtID.Location = new System.Drawing.Point(565, 546);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(134, 19);
             this.txtID.TabIndex = 40;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(104, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 25);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "REGISTRO ORDENES";
             // 
             // Ordenes
             // 
@@ -292,6 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1127, 599);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.dataGridOrden);
@@ -342,5 +355,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label2;
     }
 }

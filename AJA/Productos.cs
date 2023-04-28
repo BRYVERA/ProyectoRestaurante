@@ -159,7 +159,20 @@ namespace AJA
 
         private void dataGridProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                indexRow = e.RowIndex;
+                DataGridViewRow row = dataGridProductos.Rows[indexRow];
+                txtID.Text = row.Cells[0].Value.ToString();
+                txtTipo.Text = row.Cells[1].Value.ToString();
+                txtcosto.Text = row.Cells[2].Value.ToString();
+                txtInventario.Text = row.Cells[3].Value.ToString();
+            }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("La carga de los datos esta durando mas de lo esperado...., ");
+            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
