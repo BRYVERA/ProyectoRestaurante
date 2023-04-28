@@ -51,7 +51,7 @@ namespace AJA
                 comando.Parameters.Add("p_reserva_id", OracleType.Number).Value = Convert.ToInt32(txtReservaID.Text);
                 comando.Parameters.Add("p_hora", OracleType.VarChar).Value = txtHora.Text;
                 comando.ExecuteNonQuery();
-                conexion.Close();
+              
                 MessageBox.Show("Registro exitoso");
 
                 txtFecha.Text = "";
@@ -66,6 +66,8 @@ namespace AJA
 
                 MessageBox.Show("Lo siento,algo fallo");
             }
+
+            conexion.Close();
 
         }
 
@@ -86,7 +88,7 @@ namespace AJA
                 DataTable tabla = new DataTable();
                 adaptador.Fill(tabla);
                 dgvReportesMesa.DataSource = tabla;
-                conexion.Close();
+               
             }
             catch (Exception)
             {
@@ -94,7 +96,7 @@ namespace AJA
                 MessageBox.Show("Lo siento,algo fallo");
             }
 
-            
+            conexion.Close();
         }
 
         //Eliminar Reporte
@@ -111,7 +113,7 @@ namespace AJA
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.Parameters.Add("p_reporte_reserva_id", OracleType.Number).Value = Convert.ToInt32(txtReporteID.Text);
                     comando.ExecuteNonQuery();
-                    conexion.Close();
+                   
 
                     txtFecha.Text = "";
                     txtIDCliente.Text = "";
@@ -124,8 +126,8 @@ namespace AJA
             {
                 MessageBox.Show("Lo siento,algo fallo");
             }
+            conexion.Close();
 
-            
         }
 
         //Actualizar 

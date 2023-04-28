@@ -41,13 +41,15 @@ namespace AJA
                 DataTable tabla = new DataTable();
                 adaptador.Fill(tabla);
                 dgvStocks.DataSource = tabla;
-                conexion.Close();
+                
             }
             catch (Exception)
             {
 
                 MessageBox.Show("Lo siento,algo fallo");
             }
+
+            conexion.Close();
         }
 
         //Registrar
@@ -66,7 +68,7 @@ namespace AJA
                     comando.Parameters.Add("P_STOCK_TOTAL", OracleType.Number).Value = Convert.ToInt32(txtStockTotal.Text);
 
                     comando.ExecuteNonQuery();
-                    conexion.Close();
+                   
             MessageBox.Show("Registro exitoso");
 
             txtInventarioID.Text = "";
@@ -80,7 +82,7 @@ namespace AJA
             {
                 MessageBox.Show("Lo siento,algo fallo");
             }
-
+            conexion.Close();
 
         }
         //Eliminar
@@ -97,7 +99,7 @@ namespace AJA
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.Parameters.Add("P_INVENTARIO_ID", OracleType.Number).Value = Convert.ToInt32(txtInventarioID.Text);
                     comando.ExecuteNonQuery();
-                    conexion.Close();
+                    
                     txtInventarioID.Text = "";
                     txtStockInicial.Text = "";
                     txtDescripcion.Text = "";
@@ -110,6 +112,8 @@ namespace AJA
             {
                 MessageBox.Show("Lo siento,algo fallo");
             }
+
+            conexion.Close();
         }
         //Actualizar
         private void btnActualizarStock_Click(object sender, EventArgs e)
@@ -126,7 +130,7 @@ namespace AJA
             comando.Parameters.Add("P_STOCK_TOTAL", OracleType.Number).Value = Convert.ToInt32(txtStockTotal.Text);
 
             comando.ExecuteNonQuery();
-            conexion.Close();
+          
             MessageBox.Show(" Actualizacion exitosa");
 
 
@@ -140,6 +144,8 @@ namespace AJA
             {
                 MessageBox.Show("Lo siento,algo fallo");
             }
+
+            conexion.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
